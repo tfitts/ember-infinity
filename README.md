@@ -349,14 +349,7 @@ export default Ember.Route.extend(InfinityRoute, {
 
 The `infinity-loader` component as some extra options to make working with it easy!
 
-* **destroyOnInfinity**
-
-```hbs
-{{infinity-loader infinityModel=model destroyOnInfinity=true}}
-```
-
-Now, when the Infinity Model is fully loaded, the `infinity-loader` will remove itself
-from the page.
+* **[DEPRECATED] destroyOnInfinity** 
 
 * **developmentMode**
 
@@ -409,10 +402,7 @@ component.
 Will install the default `infinity-loader` template into your host app, at
 `app/templates/components/infinity-loader`.
 
-**[DEPRECATED] scrollable** 
-
-You can optionally pass in a jQuery style selector string.  If it's not a string,
-scrollable will default to using the window for the scroll binding.
+* **[DEPRECATED] scrollable** 
 
 * **triggerOffset**
 
@@ -421,6 +411,14 @@ scrollable will default to using the window for the scroll binding.
 ```
 
 You can optionally pass an offset value.   This value will be used when calculating if the bottom of the scrollable has been reached.  
+
+* **eventDebounce**
+
+```hbs
+{{infinity-loader eventDebounce=debounceTimer}}
+```
+
+Default to 10ms.  You can optionally pass a debounce time to delay loading the list when reach bottom of list
 
 ### Use ember-infinity with button
 
