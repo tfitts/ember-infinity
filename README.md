@@ -346,7 +346,13 @@ export default Ember.Route.extend(InfinityRoute, {
 
 The `infinity-loader` component as some extra options to make working with it easy!
 
-* **[DEPRECATED] destroyOnInfinity** 
+* **destroyOnInfinity** 
+
+```hbs
+{{infinity-loader infinityModel=model destroyOnInfinity=true}}
+```
+
+Now, when the Infinity Model is fully loaded, the `infinity-loader` will remove itself from the page
 
 * **developmentMode**
 
@@ -414,10 +420,10 @@ You can optionally pass an offset value.   This value will be used when calculat
 * **eventDebounce**
 
 ```hbs
-{{infinity-loader eventDebounce=debounceTimer}}
+{{infinity-loader eventDebounce=50}}
 ```
 
-Default is 10ms.  You can optionally pass a debounce time to delay loading the list when reach bottom of list
+Default is 50ms.  You can optionally pass a debounce time to delay loading the list when reach bottom of list
 
 ### Use ember-infinity with button
 
