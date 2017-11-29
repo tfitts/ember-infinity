@@ -14,6 +14,7 @@ const InfinityLoaderComponent = Component.extend(InViewportMixin, {
   loadedText: 'Infinite Model Entirely Loaded.',
   developmentMode: false,
   destroyOnInfinity: false,
+  scrollable: null,
   triggerOffset: 0,
 
   willInsertElement() {
@@ -39,7 +40,8 @@ const InfinityLoaderComponent = Component.extend(InViewportMixin, {
         right: 0,
         bottom: this.get('triggerOffset'),
         left: 0
-      }
+      },
+      scrollableArea: this.get('scrollable'),
     });
   },
 
